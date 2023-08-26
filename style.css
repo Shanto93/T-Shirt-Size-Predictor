@@ -1,3 +1,18 @@
+#back{
+  background-image: url(assets/background03.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+#grad{
+  background: #391BCF;
+  background: radial-gradient(circle farthest-corner at bottom right, #391BCF 6%, #FC1745 50%, #CF42C1 72%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
 
 label {
   font-weight: bold;

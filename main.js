@@ -16,7 +16,6 @@ function manhattanDistance(point1, point2) {
 }
 
 function knnPredict(k, height, weight, algorithm) {
-  console.log({ k, weight, height });
   const inputHeight = parseFloat(height);
   const inputweight = parseFloat(weight);
   let distances = [];
@@ -37,7 +36,6 @@ function knnPredict(k, height, weight, algorithm) {
   }
   distances.sort((a, b) => a.distance - b.distance);
   const nearestNeighbors = distances.slice(0, k);
-  console.log(nearestNeighbors);
   let sizeCounts = {};
   nearestNeighbors.forEach((point) => {
     sizeCounts[point.size] = (sizeCounts[point.size] || 0) + 1;
@@ -57,8 +55,7 @@ document.getElementById("tshirt-form").addEventListener("submit", (e) => {
   const weight = parseFloat(weightElement.value);
   const k = parseInt(kElement.value);
   const algorithm = algorithmElement.value;
-  const predictedSize = knnPredict(k, height, weight, algorithm);
-
+  
   if(k<1 || height < 1  || weight <1)
   {
     Swal.fire({
@@ -78,22 +75,9 @@ document.getElementById("tshirt-form").addEventListener("submit", (e) => {
     return;
   }
 
+  const predictedSize = knnPredict(k, height, weight, algorithm);
   Swal.fire({
     imageUrl: `./assets/${predictedSize}.png`,
-    imageAlt: 'A tall image'
+    imageAlt: `T-shirt size is ${predictedSize}`,
   })
-  // Display the result
-  document.getElementById("result").innerHTML = `
-  
-  
-  `;
 });
-
-// const defaultValueClicked = () => {
-//   heightElement.value = 176;
-//   weightElement.value = 74.8;
-//   kElement.value = 3;
-//   algorithmElement.value = "0";
-// };
-
-{/* <img class="w-75 h-96 px-5" src="./assets/${predictedSize}.png" alt="${predictedSize} T-Shirt"></img> */}

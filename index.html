@@ -10,24 +10,7 @@
   <link rel="stylesheet" href="./style.css">
   <title>T-Shirt Size Predictor</title>
 
-  <style>
-
-    #back{
-      background-image: url(assets/background03.png);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-attachment: fixed;
-    }
-
-    #grad{
-      background: #391BCF;
-background: radial-gradient(circle farthest-corner at bottom right, #391BCF 6%, #FC1745 50%, #CF42C1 72%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-
-    }
-  </style>
+ 
 
 </head>
 <body id="back" class="bg-slate-400">
@@ -83,8 +66,7 @@ background: radial-gradient(circle farthest-corner at bottom right, #391BCF 6%, 
           <div class="my-3">
             <label for="algorithm" class="text-sm font-medium">Distance Function:</label>
             <select class="select select-bordered w-full mt-1 border rounded-lg p-2 border-red-800" name="algorithm" id="algorithm">
-              <option value="" disabled selected>Select Any Function</option>
-              <option value="0">Euclidian Distance Function</option>
+              <option selected value="0">Euclidian Distance Function</option>
               <option value="1">Manhattan Distance Function</option>
             </select>
           </div>
@@ -99,17 +81,6 @@ background: radial-gradient(circle farthest-corner at bottom right, #391BCF 6%, 
           </div>
         </form>
       </div>
-      <!-- <div class="p-4 h-[467px] shadow-md border rounded-lg mx-auto bg-white">
-        <h2 class="text-center text-lg font-semibold">Result</h2>
-        <hr class="my-2">
-        <div id="result" class="flex items-center justify-center">
-          <img
-            class="w-3/4 px-5"
-            src="./assets/placeholder.gif"
-            alt="What's the size?"
-          />
-        </div>
-      </div> -->
     </div>
   </div>
 
