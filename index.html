@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./../assets/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@1.11.0/full.css">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>T-Shirt Size Predictor</title>
+
+  <style>
+
+    #back{
+      background-image: url(assets/background03.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+    }
+
+    #grad{
+      background: #391BCF;
+background: radial-gradient(circle farthest-corner at bottom right, #391BCF 6%, #FC1745 50%, #CF42C1 72%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+    }
+  </style>
+
+</head>
+<body id="back" class="bg-slate-400">
+  <div class="container mx-auto mt-5">
+    <h1 id="grad" class="mb-4 text-center text-primary font-extrabold text-4xl my-4">T-Shirt Size Predictor</h1>
+    <div class="grid grid-cols-1">
+      <div class="p-4 h-fit border rounded-lg mx-auto shadow-lg">
+        <h2 class="text-center text-lg font-semibold">T Shirt Information</h2>
+        <hr class="my-2">
+        <form action="#" id="tshirt-form">
+          <div class="my-3">
+            <label for="height" class="text-sm font-medium">Height (in cm):</label>
+            <input
+              name="height"
+              type="number"
+              step="any"
+              class="input input-bordered w-full mt-1 border rounded-lg p-2 border-red-800"
+              id="height"
+              placeholder="Your Height"
+              required="true"
+            />
+          </div>
+          <div class="my-3">
+            <label for="weight" class="text-sm font-medium">Weight (in kg):</label>
+            <input
+              type="number"
+              name="weight"
+              step="any"
+              class="input input-bordered w-full mt-1 border rounded-lg p-2 border-red-800"
+              id="weight"
+              placeholder="Your weight"
+              required="true"
+            />
+          </div>
+          <div class="my-3">
+            <label for="kvalue" class="text-sm font-medium">Value of K:</label>
+            <input
+              type="number"
+              name="kvalue"
+              min="1"
+              class="input input-bordered w-full mt-1 border rounded-lg p-2 border-red-800"
+              id="kvalue"
+              placeholder="Choose value for K"
+              required="true"
+              list="k-value-list"
+            />
+            <datalist id="k-value-list">
+              <option value="3">3</option>
+              <option value="5">5</option>
+              <option value="7">7</option>
+            </datalist>
+          </div>
+          <div class="my-3">
+            <label for="algorithm" class="text-sm font-medium">Distance Function:</label>
+            <select class="select select-bordered w-full mt-1 border rounded-lg p-2 border-red-800" name="algorithm" id="algorithm">
+              <option value="" disabled selected>Select Any Function</option>
+              <option value="0">Euclidian Distance Function</option>
+              <option value="1">Manhattan Distance Function</option>
+            </select>
+          </div>
+          <div class="my-3">
+            <button
+              id="predictBtn"
+              type="submit"
+              class="btn btn-primary w-full mt-4 bg-red-700 rounded-lg py-2"
+            >
+              <span class="text-white font-bold">Predict Size</span>
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- <div class="p-4 h-[467px] shadow-md border rounded-lg mx-auto bg-white">
+        <h2 class="text-center text-lg font-semibold">Result</h2>
+        <hr class="my-2">
+        <div id="result" class="flex items-center justify-center">
+          <img
+            class="w-3/4 px-5"
+            src="./assets/placeholder.gif"
+            alt="What's the size?"
+          />
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+  <script src="./data.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
